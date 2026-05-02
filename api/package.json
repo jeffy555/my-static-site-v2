@@ -1,16 +1,1 @@
-{
-  "name": "lumen-notes-api",
-  "version": "1.0.0",
-  "description": "A simple note-taking API",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
-  },
-  "engines": {
-    "node": ">=20"
-  }
-}
+{"name":"lumen-notes-api","version":"1.0.0","scripts":{"start":"node app.js"},"dependencies":{"express":"^4.18.2","cors":"^2.8.5"},"engines":{"node":">=20"}}

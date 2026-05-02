@@ -1,28 +1,17 @@
-name: Deploy API
-
+name: Deploy API to Azure App Service
 on:
   workflow_dispatch:
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-
-    - name: Install dependencies
-      run: npm ci
-      working-directory: ./api
-
-    - name: Deploy to Azure
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: lumen-api-038924
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./api
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: cd api && npm ci
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: lumen-api-752642
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./api
