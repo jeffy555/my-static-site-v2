@@ -1,7 +1,7 @@
 {
   "name": "lumen-notes-api",
   "version": "1.0.0",
-  "description": "A simple Express API to manage notes.",
+  "description": "A simple note-taking API",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
