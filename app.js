@@ -1,27 +1,25 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
 
-// Dummy data for notes
-let notes = [
-    { id: 1, content: 'This is a note' },
-    { id: 2, content: 'This is another note' }
-];
+let notes = [];
 
-// Health check endpoint
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'Healthy' });
+  res.status(200).send('OK');
 });
 
-// Get all notes
 app.get('/api/notes', (req, res) => {
-    res.status(200).json(notes);
+  res.status(200).json(notes);
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.post('/api/notes', (req, res) => {
+  const note = req.body;
+  notes.push(note);
+  res.status(201).json(note);
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
