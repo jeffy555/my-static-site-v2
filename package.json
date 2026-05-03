@@ -1,10 +1,10 @@
 {
-  "name": "nodejs-express-api",
+  "name": "node-express-api",
   "version": "1.0.0",
-  "description": "A simple Node.js Express API with health and notes endpoints.",
-  "main": "app.js",
+  "description": "A simple Node.js Express API",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.17.1"
