@@ -8,10 +8,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
       - run: cd api && npm ci
       - uses: azure/webapps-deploy@v3
         with:
-          app-name: lumen-api-458631
+          app-name: lumen-api-897986
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./api
