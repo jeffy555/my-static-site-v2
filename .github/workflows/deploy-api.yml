@@ -12,6 +12,6 @@ jobs:
       - run: cd api && npm ci
       - uses: azure/webapps-deploy@v3
         with:
-          app-name: lumen-api-548675
+          app-name: lumen-api-458631
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./api
