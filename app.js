@@ -1,25 +1,15 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-const notes = [];
+const port = process.env.PORT || 3000;
 
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
 app.get('/api/notes', (req, res) => {
-  res.json(notes);
+  res.status(200).json({ notes: ['Note 1', 'Note 2'] });
 });
 
-app.post('/api/notes', (req, res) => {
-  const note = req.body.note;
-  notes.push(note);
-  res.status(201).json({ note });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
